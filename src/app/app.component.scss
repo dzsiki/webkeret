@@ -1,0 +1,28 @@
+a,div {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover, a:active {
+    color: darkred;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-sidenav {
+    width: 250px;
+}
+
+mat-toolbar {
+    background-color: #42280E;
+}
+.belepve{
+    background-color: #42280E;
+}
+.kilepve{
+    background-color: #1b0e00;
+}

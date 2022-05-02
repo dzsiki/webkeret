@@ -1,0 +1,30 @@
+.egesz {
+    
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+
+    background-color: darkgreen;
+    flex-direction: column;
+    color: coral;
+    height: 100vh;
+}
+
+.cim {
+    margin: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 20vh;
+    font-size: 7vh;
+    line-height: 7vh;
+}
+
+.szoveg {
+    margin-left: 1vh;
+    font-size: 4vh;
+    line-height: 4vh;
+}
+
+

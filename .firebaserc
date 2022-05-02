@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkeret-d4e86": {
+      "hosting": {
+        "week-04": [
+          "webkeret-d4e86"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkeret-d4e86"
+  }
+}

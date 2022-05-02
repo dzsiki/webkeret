@@ -1,0 +1,82 @@
+<div class="div-card" *ngIf="imageInput" [ngStyle]="{'background-color' : convertStringtoNumber(imageInput.id) === 1 ? 'green' : convertStringtoNumber(imageInput.id) === 2 ? 'blue' : convertStringtoNumber(imageInput.id) === 3 ? 'red' : 'black'}">
+    <mat-card fxLayout fxLayoutGap="20px">
+        <span fxFlex="1 1 50%">
+            <mat-card-header>
+                <mat-card-title>{{imageInput.leiras}}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <img class="galleryImage" [src]="loadedImage" />
+                <div>{{imageInput.leiras}}</div>
+                <!-- <div class="break"></div>
+                <div>{{imageInput.user_url}}</div>
+                <div class="break"></div>
+                <div>{{imageInput.photo_url}}</div> -->
+            </mat-card-content>
+        </span>
+        <span fxFlex="1 1 50%">
+            <mat-card-actions>
+                <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="username">Név: </mat-label>
+                            <input matInput type="text" formControlName="username" />
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="idopont">Időpont: </mat-label>
+                            <!---- <input matInput type="text" formControlName="idopont"/>-->
+
+                            <mat-select placeholder="Időpont" formControlName="idopont">
+                                <mat-option [value]="idopont.idopont" *ngFor="let idopont of idopontok">{{idopont.idopont}}</mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+
+            
+
+                    </div>
+
+                    <div class="break"></div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="comment">Komment: </mat-label>
+                            <textarea matInput rows="10" cols="50" formControlName="comment"></textarea>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="break"></div>
+                    <div>
+                        <button mat-raised-button color="primary" type="submit">Foglalás</button>
+                    </div>
+                </form>
+            </mat-card-actions>
+        </span>
+
+    </mat-card>
+    <div class="div-card">
+    <mat-card class="tablazat" fxLayout fxLayoutGap="20px">
+        <div class="tablazat2">
+        <table [ngStyle]="{'background-color' : convertStringtoNumber(imageInput.id) === 1 ? 'green' : convertStringtoNumber(imageInput.id) === 2 ? 'blue' : convertStringtoNumber(imageInput.id) === 3 ? 'red' : 'black'}">
+            <tr>
+                <th>Szabad időpontok</th>
+            </tr>
+            <tr *ngFor="let idopont of osszesidopont; let i = index;">
+                <td *ngIf="!idopont.Foglalt">{{idopont.idopont | dateFormat}}</td>
+            </tr>
+        </table>
+   
+        <table [ngStyle]="{'background-color' : convertStringtoNumber(imageInput.id) === 1 ? 'green' : convertStringtoNumber(imageInput.id) === 2 ? 'blue' : convertStringtoNumber(imageInput.id) === 3 ? 'red' : 'black'}">
+            <tr>
+                <th>Foglalt időpontok</th>
+            </tr>
+            <tr *ngFor="let idopont of osszesidopont; let i = index;">
+                <td *ngIf="idopont.Foglalt">{{idopont.idopont | dateFormat}}</td>
+            </tr>
+        </table>
+    </div>
+</mat-card>
+</div>
+</div>
