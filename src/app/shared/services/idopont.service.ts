@@ -30,4 +30,17 @@ export class IdopontService {
     return this.afs.collection<Idopont>(this.collectionName).doc(asztal + idopont).set(this.ujido)
   }
 
+  resetasztal(asztal: string){
+    var pontok = this.afs.collection<Idopont>(this.collectionName, ref => ref.where("Asztal", "==", asztal).where("Foglalt","==",true)).valueChanges();
+    var pontok2 = pontok.subscribe(idopontok => {
+      idopontok.forEach(idopont=>{
+        this.afs.collection<Idopont>(this.collectionName).doc(asztal + idopont.idopont).update({Foglalt:false});
+        console.log("for");
+      });  
+      pontok2.unsubscribe();
+      console.log("unsub");
+    });
+    
+  }
+
 }

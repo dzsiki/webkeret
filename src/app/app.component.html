@@ -12,12 +12,12 @@
       <div>Billiárd Világ</div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs >
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-          <li matRipple [matRippleCentered]="true" [matRippleRadius]="23" [matRippleUnbounded]="true" [matRippleColor]="'red'" *ngIf="!(loggedInUser)"><a routerLink="/login">Login</a></li>
-          <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'" *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()">Logout</a></li>
+          <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'" *ngIf="!(loggedInUser)"><a routerLink="/login">Belépés</a></li>
+          <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'" *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()">Kilépés</a></li>
           <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'" *ngIf="!(loggedInUser)"><a routerLink="/signup">Register</a></li>
-          <li matRipple [matRippleCentered]="true" [matRippleRadius]="20" [matRippleUnbounded]="true" [matRippleColor]="'red'"><a routerLink="/main">Main</a></li>
+          <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'"><a routerLink="/main">Főoldal</a></li>
           <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'"><a routerLink="/gallery">Foglalás</a></li>
-          <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'"><a routerLink="/contact">Contact</a></li>
+          <li matRipple [matRippleCentered]="true" [matRippleRadius]="30" [matRippleUnbounded]="true" [matRippleColor]="'red'"><a routerLink="/contact">Kontakt</a></li>
         </ul>
       </div>
     </mat-toolbar>

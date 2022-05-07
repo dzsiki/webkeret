@@ -87,4 +87,9 @@ export class ViewerComponent implements OnInit, OnChanges {
     }
   }
 
+  resetfoglalt(){
+    if(this.imageInput)
+    this.idopontService.resetasztal(this.imageInput.id);
+  }
+
 }

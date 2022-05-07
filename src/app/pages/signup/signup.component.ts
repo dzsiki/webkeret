@@ -30,6 +30,10 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signUpForm.value);
+    if(this.signUpForm.valid){
+      console.log("valid")
+      if(this.signUpForm.get("password")?.value == this.signUpForm.get("rePassword")?.value){
+        console.log("jelszo jo");
     this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
       console.log(cred);
       const user: User = {
@@ -50,6 +54,7 @@ export class SignupComponent implements OnInit {
     }).catch(error => {
       console.error(error);
     });
+  }}
   }
 
   goBack() {

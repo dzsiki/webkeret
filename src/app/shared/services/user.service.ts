@@ -10,9 +10,6 @@ export class UserService {
   collectionName = 'Users';
 
   constructor(private afs: AngularFirestore) { }
-
-  // CRUD (Create, Read, Update, Delete)
-
   create(user: User) {
     return this.afs.collection<User>(this.collectionName).doc(user.id).set(user);
   }
@@ -30,6 +27,16 @@ export class UserService {
   }
 
   delete(id: string) {
-    return this.afs.collection<User>(this.collectionName).doc(id).delete();
+    console.log("Users/"+id);
+    
+    var curruser = this.afs.collection<User>(this.collectionName, ref => ref.where("id", "==", id)).valueChanges();
+    var curruser2 = curruser.subscribe(currusers => {
+      currusers.forEach(asd=>{
+        this.afs.collection<User>(this.collectionName).doc(asd.id).delete();
+        console.log("for");
+      });  
+      curruser2.unsubscribe();
+      console.log("unsub");
+    });
   }
 }

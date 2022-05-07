@@ -18,4 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule
   ]
 })
-export class ContactModule { }
+export class ContactModule {
+
+ 
+ }
+

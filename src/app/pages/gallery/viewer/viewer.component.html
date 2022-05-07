@@ -8,10 +8,6 @@
             <mat-card-content>
                 <img class="galleryImage" [src]="loadedImage" />
                 <div>{{imageInput.leiras}}</div>
-                <!-- <div class="break"></div>
-                <div>{{imageInput.user_url}}</div>
-                <div class="break"></div>
-                <div>{{imageInput.photo_url}}</div> -->
             </mat-card-content>
         </span>
         <span fxFlex="1 1 50%">
@@ -27,8 +23,6 @@
                     <div>
                         <mat-form-field>
                             <mat-label for="idopont">Időpont: </mat-label>
-                            <!---- <input matInput type="text" formControlName="idopont"/>-->
-
                             <mat-select placeholder="Időpont" formControlName="idopont">
                                 <mat-option [value]="idopont.idopont" *ngFor="let idopont of idopontok">{{idopont.idopont}}</mat-option>
                             </mat-select>
@@ -49,6 +43,7 @@
 
                     <div class="break"></div>
                     <div>
+                        <button mat-raised-button color="primary" type="button" (click)="resetfoglalt()">((Reset Foglalások))</button>
                         <button mat-raised-button color="primary" type="submit">Foglalás</button>
                     </div>
                 </form>

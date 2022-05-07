@@ -19,7 +19,7 @@ export class GalleryService {
     private storage: AngularFireStorage    
     ) { }
 
-  loadImageMeta(metaUrl: string): Observable<Array<Image>> {
+  loadImageMeta(): Observable<Array<Image>> {
     return this.afs.collection<Image>(this.collectionName).valueChanges();
   }
 
